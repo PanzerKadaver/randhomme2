@@ -24,11 +24,31 @@ module.exports = function (self) {
 		query.exec(function (err, docs) {
 			if (err) throw err;
 
-			var src =	[self.uploadPath+"/"+docs[0].code+".jpg",
-						self.uploadPath+"/"+docs[1].code+".jpg",
-						self.uploadPath+"/"+docs[2].code+".jpg",
-						self.uploadPath+"/"+docs[3].code+".jpg"];
-			var meltPath = self.tempPath+"/"+docs[0].code+docs[1].code+docs[2].code+docs[3].code+".jpg";
+			var one, two, three, four;
+
+			one = Math.floor(((docs.length)-0)*Math.random())+0;
+			console.log("one: "+one);
+
+			do {
+				two = Math.floor(((docs.length)-0)*Math.random())+0;
+			} while (two == one);
+			console.log("two: "+two);
+
+			do {
+				three = Math.floor(((docs.length)-0)*Math.random())+0;
+			} while (three == two || three == one);
+			console.log("three: "+three);
+
+			do {
+				four = Math.floor(((docs.length)-0)*Math.random())+0;
+			} while (four == three || four == two || four == one);
+			console.log("four: "+four);
+
+			var src =	[self.uploadPath+"/"+docs[one].code+".jpg",
+						self.uploadPath+"/"+docs[two].code+".jpg",
+						self.uploadPath+"/"+docs[three].code+".jpg",
+						self.uploadPath+"/"+docs[four].code+".jpg"];
+			var meltPath = self.tempPath+"/"+docs[one].code+docs[two].code+docs[three].code+docs[four].code+".jpg";
 			var tempIndex = self.tempPath+"/"+"tempIndex.jpg";
 
 			var size = 10;
