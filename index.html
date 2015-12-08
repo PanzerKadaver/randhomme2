@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html lang="fr" ng-app="RandHommeApp">
+	<head>
+		<meta charset="utf-8">
+		<title>Rand'Homme</title>
+		<script type="text/javascript" src="/lib/jquery-2.1.4.min.js"></script>
+
+		<script type="text/javascript" src="/lib/angular.min.js"></script>
+		<script type="text/javascript" src="/lib/ng-flow-standalone.js"></script>
+
+		<script type="text/javascript" src="/lib/cropper.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="/css/ngCropper.all.min.css" />
+		<script type="text/javascript" src="/lib/ngCropper.all.js"></script>
+
+		<script type="text/javascript" src="/lib/jquery.onepage-scroll.js"></script>
+
+		<script type="text/javascript" src="/js/app.js"></script>
+		<script type="text/javascript" src="/ctrl/main.js"></script>
+
+		<script type="text/javascript" src="/js/full-page.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="/css/onepage-scroll.css" />
+		<link rel="stylesheet" type="text/css" href="/css/rand.css" />		
+	</head>
+
+	<body ng-controller="MainCtrl"
+		flow-init="{target: '/upload', singleFile: true}"
+		flow-name="flow"
+		class="disabled-wheel-scroll" >
+		<div class="main">
+			<section id="header-section" class="even">
+				
+			</section>
+			<section id="upload-section" class="odd">
+				<img src="/img/title_1.png" class="title_1">
+				<div class="instruction_1">
+					<p>— Visage et épaules face à l'objectif</p>
+					<p>— Pas d'accessoires (lunettes, chapeau, foulard, etc.)</p>
+					<p>— Expression souriante mais pas trop, bouche fermée</p>
+					<p>Merci de respecter ces instructions, sinon la fusion avec d’autres individus risque de donner des monstres ;)</p>
+				</div>
+				<div class="display_1">
+					<div class="display_wrapper_1">
+						<div class="display_block_1">
+							<img id="display_1" flow-img="$flow.files[0]"/>
+						</div>
+					</div>
+				</div>
+				<div class="upload_1">
+					<input accept=".jpg" type="file" flow-btn onchange="angular.element(this).scope().onFile(this.files[0])"/>
+				</div>
+			</section>
+			<section id="cadrage-section" class="even">
+				<div class="cropper">
+					<img ng-if="dataUrl" ng-src="{{dataUrl}}" height="510"
+						ng-cropper
+						ng-cropper-proxy="cropperProxy"
+						ng-cropper-show="showEvent"
+						ng-cropper-hide="hideEvent"
+						ng-cropper-options="options">
+				</div>
+				<button ng-click="cropUpload()">Upload</button>
+			</section>
+			<section id="result-section" class="odd">
+				
+			</section>
+		</div>
+	</body>
+</html>

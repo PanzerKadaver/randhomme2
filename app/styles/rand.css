@@ -1,0 +1,69 @@
+body {
+	margin: 0;
+}
+
+section {
+	padding: 75px;
+	box-sizing: border-box;
+}
+
+section.even {
+	background-color: yellow;
+}
+
+section.odd {
+	background-color: white;
+}
+
+section#upload-section {
+	width: 100%;
+	height: 100%;
+}
+
+section#upload-section .title_1 {
+	width: 100%;
+	max-width: 1000px;
+	display: block;
+	margin-bottom: 25px;
+}
+
+section#upload-section .instruction_1 {
+	width: 500px;
+	max-width: 50%;
+	float: left;
+}
+
+section#upload-section .display_1 {
+	width: 50%;
+	max-width: 368px;
+	float: right;
+}
+
+section#upload-section .display_wrapper_1 {
+	width: 100%;
+	padding-bottom: 135.87%;
+	border: 2px solid black;
+	position: relative;
+}
+
+section#upload-section .display_wrapper_1 > div {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+}
+
+section#upload-section .display_block_1 {
+	background-color: lightgrey;
+}
+
+section#upload-section #display_1 {
+	width: 100%;
+}
+
+span.cropper-face.cropper-invisible.cropper-move {
+	background-image: url("/img/gabarit.png");
+    background-size: 368px 510px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: transparent;
+    opacity: 0.75;
+}
