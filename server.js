@@ -216,7 +216,7 @@ var RandApp = function() {
 									nh.save(function (err) {
 										if (err) throw err;
 										console.log("homme saved");
-									}))
+									})),
 						err => res.status(400).send(err) //console.log(err)
 				);
 			}
