@@ -30,7 +30,7 @@
 		<div class="main">
 			<section id="header-section" class="even">
 				<img src="/img/logo.png" class="logo">
-				<img src="/img/down.png" class="down-arrow">
+				<img src="/img/down.png" class="down-arrow" ng-click="nextSection()">
 			</section>
 			<section id="upload-section" class="odd">
 				<img src="/img/title_1.png" class="title">
@@ -50,7 +50,7 @@
 				<div class="upload_1">
 					<input accept=".jpg" type="file" flow-btn onchange="angular.element(this).scope().onFile(this.files[0])"/>
 				</div>
-				<img src="/img/down.png" class="down-arrow">
+				<img src="/img/down.png" class="down-arrow" ng-click="nextSection()">
 			</section>
 			<section id="cadrage-section" class="even">
 				<img src="/img/title_2.png" class="title">
@@ -63,7 +63,7 @@
 						ng-cropper-options="options">
 				</div>
 				<button ng-click="cropUpload()">Upload</button>
-				<img src="/img/down.png" class="down-arrow">
+				<img src="/img/down.png" class="down-arrow" ng-click="nextSection()">
 			</section>
 			<section id="result-section" class="odd">
 				<img src="/img/title_3.png" class="title">

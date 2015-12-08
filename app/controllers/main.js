@@ -13,6 +13,10 @@ RandControllers.controller('MainCtrl', ['$rootScope', '$scope', '$http', '$timeo
 	  }
 	};
 
+	$scope.nextSection = function () {
+		$(".main").moveDown();
+	};
+
 	$scope.flow = {}
 
 	$scope.$on('flow::fileAdded', function (event, $flow, flowFile) {
