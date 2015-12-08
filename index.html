@@ -29,10 +29,11 @@
 		class="disabled-wheel-scroll" >
 		<div class="main">
 			<section id="header-section" class="even">
-				<img src="/img/logo.png">
+				<img src="/img/logo.png" class="logo">
+				<img src="/img/down.png" class="down-arrow">
 			</section>
 			<section id="upload-section" class="odd">
-				<img src="/img/title_1.png" class="title_1">
+				<img src="/img/title_1.png" class="title">
 				<div class="instruction_1">
 					<p>— Visage et épaules face à l'objectif</p>
 					<p>— Pas d'accessoires (lunettes, chapeau, foulard, etc.)</p>
@@ -49,8 +50,10 @@
 				<div class="upload_1">
 					<input accept=".jpg" type="file" flow-btn onchange="angular.element(this).scope().onFile(this.files[0])"/>
 				</div>
+				<img src="/img/down.png" class="down-arrow">
 			</section>
 			<section id="cadrage-section" class="even">
+				<img src="/img/title_2.png" class="title">
 				<div class="cropper">
 					<img ng-if="dataUrl" ng-src="{{dataUrl}}" height="510"
 						ng-cropper
@@ -60,9 +63,10 @@
 						ng-cropper-options="options">
 				</div>
 				<button ng-click="cropUpload()">Upload</button>
+				<img src="/img/down.png" class="down-arrow">
 			</section>
 			<section id="result-section" class="odd">
-				
+				<img src="/img/title_3.png" class="title">
 			</section>
 		</div>
 	</body>

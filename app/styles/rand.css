@@ -8,6 +8,7 @@ body {
 
 section {
 	padding: 75px;
+	padding-top: 20px;
 	box-sizing: border-box;
 }
 
@@ -19,11 +20,22 @@ section.odd {
 	background-color: white;
 }
 
-section#header-section img {
+section#header-section img.logo {
 	width: 80%;
     margin-left: auto;
     margin-right: auto;
     display: block;
+    margin-top: 50px;
+}
+
+img.down-arrow {
+	width: 7%;
+    position: absolute;
+    bottom: 20px;
+    left: 45%;
+    right: 45%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 section#upload-section {
@@ -31,7 +43,7 @@ section#upload-section {
 	height: 100%;
 }
 
-section#upload-section .title_1 {
+section img.title {
 	width: 100%;
 	max-width: 1000px;
 	display: block;
