@@ -27,6 +27,7 @@ var RandApp = function() {
 	var FlowUploader = require('./server/flow-uploader.js')
 	self.uploader = new FlowUploader();
 	self.uploadPath = self.path.resolve(self.uploader.uploadDir);
+	self.tempPath = self.path.resolve(self.uploader.tempDir);
 
 	
 
@@ -216,6 +217,12 @@ var RandApp = function() {
 									nh.save(function (err) {
 										if (err) throw err;
 										console.log("homme saved");
+										self.gm(self.uploadPath+"/"+sNumber+".jpg")
+										.resize(680, 916, '!')
+										.write(self.uploadPath+"/"+sNumber+".jpg", function (err) {
+											if (!err) console.log('resize done');
+											else throw err;
+										});
 									})),
 						err => res.status(400).send(err) //console.log(err)
 				);

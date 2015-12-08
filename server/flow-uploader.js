@@ -94,7 +94,7 @@ module.exports = class FlowUploader {
                         chunkFileName => fs.statAsync(chunkFileName),
                         {concurency: 2}
                     ).then(() => this._writeToUploadDir(numberOfChunks, identifier, fileName))
-                    .then(filename => filename, () => 'ERROR_VERIFY_CHUNK').then(() => fs.move(this.finalFile, (path.resolve(this.uploadDir)+"\\"+newFileName+".jpg")));
+                    .then(filename => filename, () => 'ERROR_VERIFY_CHUNK').then(() => fs.move(this.finalFile, (path.resolve(this.uploadDir)+"/"+newFileName+".jpg")));
                 });
     }
 
